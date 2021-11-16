@@ -1,0 +1,76 @@
+version: "3.9"
+services:
+  golang:
+    container_name: "golang"
+    build:
+      context: .
+      dockerfile: ./docker/go/Dockerfile.dev
+    restart: always
+    volumes:
+      - ./:/app
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    networks:
+      - dev
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    env_file:
+      - .env
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_DATABASE=example
+      - MONGO_INITDB_USERNAME=admin
+      - MONGO_INITDB_PASSWORD=admin
+    volumes:
+      - ./mongo/init-mongo.sh:/docker-entrypoint-initd/b.d/init-mongo.sh
+    networks:
+      - dev
+
+  redis-server:
+    image: redis:6.2.5-alpine
+    container_name: redis-server
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: p4ssw0rd
+    command: redis-server --requirepass p4ssw0rd
+    volumes:
+    - redisserverdata:/data
+    ports:
+      - 6379:6379
+    networks:
+      - dev
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+    volumes:
+      - rabbitdata:/var/lib/rabbitmq/
+      - rabbitlog:/var/log/rabbitmq
+    networks:
+      - dev
+
+volumes:
+  redisserverdata:
+    driver: local
+  rabbitdata:
+    driver: local
+  rabbitlog:
+    driver: local
+
+networks:
+  dev:

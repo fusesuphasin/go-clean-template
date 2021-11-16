@@ -1,0 +1,4 @@
+p, Admin, /role, (GET,POST,DELETE,PATCH)
+p, Admin, /role/*, (GET,POST,DELETE,PATCH)
+p, (Admin)|(User) /login, (POST)
+p, (Admin)|(User) /register, (POST)

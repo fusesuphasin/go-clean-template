@@ -1,0 +1,17 @@
+2021/11/04 06:33:22 listen tcp4 0.0.0.0:3000: bind: address already in use
+2021/11/04 14:23:57 open .env: The system cannot find the file specified.
+2021/11/04 14:24:15 open .env: The system cannot find the file specified.
+2021/11/04 14:31:30 %!s(<nil>)
+2021/11/05 09:12:36 listen tcp4 0.0.0.0:28017: bind: address already in use
+2021/11/05 09:13:33 listen tcp4 0.0.0.0:28017: bind: address already in use
+2021/11/05 09:18:26 listen tcp4 0.0.0.0:28017: bind: address already in use
+2021/11/06 15:47:09 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/06 15:48:35 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/07 21:43:24 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/07 22:29:11 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/07 22:32:01 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/07 22:35:37 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/07 22:36:34 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/07 22:37:18 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/14 21:32:36 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2021/11/14 21:34:08 listen tcp4 0.0.0.0:8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.

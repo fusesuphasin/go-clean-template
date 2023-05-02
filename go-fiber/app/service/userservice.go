@@ -18,7 +18,6 @@ func (us UserService) CreateUser(User *domain.User) (user *domain.User) {
 
 func (us UserService) CheckUsernameCount(username string) (count int64) {
 	data := us.UserRepository.CountByUsername(username)
-
 	return data
 }
 

@@ -12,7 +12,6 @@ func CheckPermission(enforcer *casbin.Enforcer, page string) fiber.Handler {
 	
 	return func(c *fiber.Ctx) error {
 		auth := session.GetAuth()
-
 		role := auth.Role
 		ok, err := enforcer.Enforce(role.Name, page, c.Method())
 
